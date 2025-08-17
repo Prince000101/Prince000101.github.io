@@ -10,21 +10,16 @@
       scroll-behavior: smooth;
     }
     section {
-      height: 100vh; /* full screen height */
+      height: 100vh; /* full screen */
     }
   </style>
 </head>
 <body class="bg-gray-900 text-white font-sans">
 
-  <!-- Header / Hero -->
+  <!-- Home -->
   <section id="home" class="flex flex-col justify-center items-center text-center px-6">
     <h1 class="text-4xl md:text-6xl font-bold mb-4">Hello, I'm <span class="text-blue-400">Prince</span> 👋</h1>
     <p class="text-lg md:text-2xl text-gray-300 mb-6">Aspiring Computer Science Engineer | BSc Psychology</p>
-    <nav class="space-x-6">
-      <a href="#about" class="hover:text-blue-400">About</a>
-      <a href="#projects" class="hover:text-blue-400">Projects</a>
-      <a href="#contact" class="hover:text-blue-400">Contact</a>
-    </nav>
   </section>
 
   <!-- About -->
@@ -74,10 +69,15 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="py-4 text-center text-gray-400 text-sm bg-gray-900">
-    © 2025 Prince | Built with ❤ and TailwindCSS
-  </footer>
+  <!-- Floating Bottom Navbar -->
+  <nav class="fixed bottom-6 left-1/2 transform -translate-x-1/2 
+              bg-gray-800/80 backdrop-blur-md shadow-lg 
+              rounded-full px-6 py-3 flex space-x-8 text-sm md:text-base">
+    <a href="#home" class="hover:text-blue-400 transition">Home</a>
+    <a href="#about" class="hover:text-blue-400 transition">About</a>
+    <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+    <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+  </nav>
 
   <!-- Smooth full-page scroll on wheel -->
   <script>
@@ -97,7 +97,7 @@
 
       sections[currentIndex].scrollIntoView({ behavior: "smooth" });
 
-      setTimeout(() => scrolling = false, 1000); // delay to avoid overscrolling
+      setTimeout(() => scrolling = false, 1000);
     });
   </script>
 </body>
