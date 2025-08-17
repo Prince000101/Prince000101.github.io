@@ -5,25 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prince | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    section {
+      height: 100vh; /* full screen height */
+    }
+  </style>
 </head>
 <body class="bg-gray-900 text-white font-sans">
 
   <!-- Header / Hero -->
-  <header class="min-h-screen flex flex-col justify-center items-center text-center px-6">
-    <h1 class="text-5xl font-bold mb-4">Hello, I'm <span class="text-blue-400">Prince</span> 👋</h1>
-    <p class="text-xl text-gray-300 mb-6">Aspiring Computer Science Engineer | BSc Psychology</p>
+  <section id="home" class="flex flex-col justify-center items-center text-center px-6">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">Hello, I'm <span class="text-blue-400">Prince</span> 👋</h1>
+    <p class="text-lg md:text-2xl text-gray-300 mb-6">Aspiring Computer Science Engineer | BSc Psychology</p>
     <nav class="space-x-6">
       <a href="#about" class="hover:text-blue-400">About</a>
       <a href="#projects" class="hover:text-blue-400">Projects</a>
       <a href="#contact" class="hover:text-blue-400">Contact</a>
     </nav>
-  </header>
+  </section>
 
   <!-- About -->
-  <section id="about" class="py-20 bg-gray-800 px-6">
+  <section id="about" class="bg-gray-800 flex flex-col justify-center px-6">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-semibold mb-6">About Me</h2>
-      <p class="text-lg text-gray-300">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-6">About Me</h2>
+      <p class="text-base md:text-lg text-gray-300">
         I’m passionate about technology, psychology, and creating cool projects. 
         Currently, I’m building my skills in computer science, while also studying 
         human behavior. I love blending both worlds — tech + mind — to build things 
@@ -33,21 +41,21 @@
   </section>
 
   <!-- Projects -->
-  <section id="projects" class="py-20 px-6">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-semibold text-center mb-12">Projects</h2>
+  <section id="projects" class="flex flex-col justify-center px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-12">Projects</h2>
       <div class="grid md:grid-cols-2 gap-8">
         
         <!-- Project Card -->
         <div class="bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition">
-          <h3 class="text-xl font-bold mb-3">Voice Assistant (Python)</h3>
+          <h3 class="text-xl md:text-2xl font-bold mb-3">Voice Assistant (Python)</h3>
           <p class="text-gray-300 mb-4">A smart assistant with speech recognition, AI responses, and GUI features.</p>
           <a href="https://github.com/your-username/voice-assistant" class="text-blue-400 hover:underline">View on GitHub →</a>
         </div>
 
         <!-- Project Card -->
         <div class="bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition">
-          <h3 class="text-xl font-bold mb-3">Portfolio Website</h3>
+          <h3 class="text-xl md:text-2xl font-bold mb-3">Portfolio Website</h3>
           <p class="text-gray-300 mb-4">This live website showcasing my skills, achievements, and projects.</p>
           <a href="https://github.com/your-username/portfolio" class="text-blue-400 hover:underline">View on GitHub →</a>
         </div>
@@ -57,19 +65,40 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="py-20 bg-gray-800 px-6">
+  <section id="contact" class="bg-gray-800 flex flex-col justify-center px-6">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-semibold mb-6">Contact</h2>
-      <p class="text-lg text-gray-300 mb-6">Feel free to reach out to me!</p>
+      <h2 class="text-3xl md:text-4xl font-semibold mb-6">Contact</h2>
+      <p class="text-base md:text-lg text-gray-300 mb-6">Feel free to reach out to me!</p>
       <p>Email: <a href="mailto:your-email@example.com" class="text-blue-400 hover:underline">your-email@example.com</a></p>
       <p>GitHub: <a href="https://github.com/your-username" class="text-blue-400 hover:underline">github.com/your-username</a></p>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="py-6 text-center text-gray-400 text-sm bg-gray-900">
+  <footer class="py-4 text-center text-gray-400 text-sm bg-gray-900">
     © 2025 Prince | Built with ❤ and TailwindCSS
   </footer>
 
+  <!-- Smooth full-page scroll on wheel -->
+  <script>
+    const sections = document.querySelectorAll("section");
+    let currentIndex = 0;
+    let scrolling = false;
+
+    window.addEventListener("wheel", (e) => {
+      if (scrolling) return;
+      scrolling = true;
+
+      if (e.deltaY > 0 && currentIndex < sections.length - 1) {
+        currentIndex++;
+      } else if (e.deltaY < 0 && currentIndex > 0) {
+        currentIndex--;
+      }
+
+      sections[currentIndex].scrollIntoView({ behavior: "smooth" });
+
+      setTimeout(() => scrolling = false, 1000); // delay to avoid overscrolling
+    });
+  </script>
 </body>
 </html>
