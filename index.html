@@ -10,27 +10,46 @@
       scroll-behavior: smooth;
     }
     section {
-      height: 100vh; /* full screen */
+      height: 100vh;
+    }
+    /* Typing animation */
+    .typing::after {
+      content: '|';
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
     }
   </style>
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white font-sans relative">
 
   <!-- Home -->
   <section id="home" class="flex flex-col justify-center items-center text-center px-6">
-    <h1 class="text-4xl md:text-6xl font-bold mb-4">Hello, I'm <span class="text-blue-400">Prince</span> 👋</h1>
-    <p class="text-lg md:text-2xl text-gray-300 mb-6">Aspiring Computer Science Engineer | BCA </p>
+    <h1 class="text-5xl md:text-7xl font-extrabold mb-4">
+      Hi, I'm <span class="text-blue-400">Prince</span> 👋
+    </h1>
+    <p class="typing text-lg md:text-2xl text-gray-300 mb-6">
+      Aspiring Computer Science Engineer | BSc Psychology
+    </p>
+    <a href="#projects" 
+       class="mt-4 px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-full text-lg transition shadow-lg hover:shadow-blue-500/40">
+       Explore My Work →
+    </a>
   </section>
 
   <!-- About -->
-  <section id="about" class="bg-gray-800 flex flex-col justify-center px-6">
+  <section id="about" class="flex flex-col justify-center px-6 bg-gray-900/60 backdrop-blur-md">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-semibold mb-6">About Me</h2>
-      <p class="text-base md:text-lg text-gray-300">
-        I’m passionate about technology, psychology, and creating cool projects. 
-        Currently, I’m building my skills in computer science, while also studying 
-        human behavior. I love blending both worlds — tech + mind — to build things 
-        that help people.
+      <h2 class="text-4xl font-bold mb-6">About Me</h2>
+      <p class="text-lg text-gray-300 leading-relaxed">
+        I’m passionate about <span class="text-blue-400">technology</span>, 
+        <span class="text-blue-400">psychology</span>, and building 
+        <span class="text-blue-400">projects</span> that blend the two.  
+        Currently pursuing <strong>BSc Psychology</strong> while mastering 
+        <strong>Computer Science</strong>.  
+        My goal? To create innovative solutions that help people and inspire change.
       </p>
     </div>
   </section>
@@ -38,21 +57,31 @@
   <!-- Projects -->
   <section id="projects" class="flex flex-col justify-center px-6">
     <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-semibold mb-12">Projects</h2>
+      <h2 class="text-4xl font-bold mb-12">Projects</h2>
       <div class="grid md:grid-cols-2 gap-8">
         
         <!-- Project Card -->
-        <div class="bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition">
-          <h3 class="text-xl md:text-2xl font-bold mb-3">Voice Assistant (Python)</h3>
-          <p class="text-gray-300 mb-4">A smart assistant with speech recognition, AI responses, and GUI features.</p>
-          <a href="https://github.com/your-username/voice-assistant" class="text-blue-400 hover:underline">View on GitHub →</a>
+        <div class="bg-gray-800/70 backdrop-blur-md rounded-2xl p-6 
+                    shadow-lg hover:shadow-blue-500/40 
+                    transform hover:-translate-y-2 transition-all duration-300">
+          <h3 class="text-2xl font-bold mb-3">Voice Assistant (Python)</h3>
+          <p class="text-gray-300 mb-4">
+            A smart assistant with speech recognition, AI-driven responses, and a modern GUI.
+          </p>
+          <a href="https://github.com/your-username/voice-assistant" 
+             class="text-blue-400 hover:underline">View on GitHub →</a>
         </div>
 
         <!-- Project Card -->
-        <div class="bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition">
-          <h3 class="text-xl md:text-2xl font-bold mb-3">Portfolio Website</h3>
-          <p class="text-gray-300 mb-4">This live website showcasing my skills, achievements, and projects.</p>
-          <a href="https://github.com/your-username/portfolio" class="text-blue-400 hover:underline">View on GitHub →</a>
+        <div class="bg-gray-800/70 backdrop-blur-md rounded-2xl p-6 
+                    shadow-lg hover:shadow-blue-500/40 
+                    transform hover:-translate-y-2 transition-all duration-300">
+          <h3 class="text-2xl font-bold mb-3">Portfolio Website</h3>
+          <p class="text-gray-300 mb-4">
+            A responsive personal portfolio showcasing my journey, skills, and achievements.
+          </p>
+          <a href="https://github.com/your-username/portfolio" 
+             class="text-blue-400 hover:underline">View on GitHub →</a>
         </div>
 
       </div>
@@ -60,30 +89,45 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="bg-gray-800 flex flex-col justify-center px-6">
+  <section id="contact" class="flex flex-col justify-center px-6 bg-gray-900/60 backdrop-blur-md">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-semibold mb-6">Contact</h2>
-      <p class="text-base md:text-lg text-gray-300 mb-6">Feel free to reach out to me!</p>
-      <p>Email: <a href="mailto:your-email@example.com" class="text-blue-400 hover:underline">your-email@example.com</a></p>
-      <p>GitHub: <a href="https://github.com/your-username" class="text-blue-400 hover:underline">github.com/your-username</a></p>
+      <h2 class="text-4xl font-bold mb-6">Contact</h2>
+      <p class="text-lg text-gray-300 mb-6">Let’s connect and collaborate!</p>
+      <div class="space-y-3">
+        <p>
+          📧 Email: 
+          <a href="mailto:your-email@example.com" class="text-blue-400 hover:underline">your-email@example.com</a>
+        </p>
+        <p>
+          💻 GitHub: 
+          <a href="https://github.com/your-username" class="text-blue-400 hover:underline">github.com/your-username</a>
+        </p>
+      </div>
     </div>
   </section>
 
   <!-- Floating Bottom Navbar -->
-  <nav class="fixed bottom-6 left-1/2 transform -translate-x-1/2 
-              bg-gray-800/80 backdrop-blur-md shadow-lg 
-              rounded-full px-6 py-3 flex space-x-8 text-sm md:text-base">
-    <a href="#home" class="hover:text-blue-400 transition">Home</a>
-    <a href="#about" class="hover:text-blue-400 transition">About</a>
-    <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
-    <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+  <nav id="navbar" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 
+              bg-gray-800/80 backdrop-blur-lg shadow-xl border border-gray-700
+              rounded-full px-8 py-3 flex space-x-10 text-sm md:text-base z-50">
+    <a href="#home" class="nav-link hover:text-blue-400 transition">Home</a>
+    <a href="#about" class="nav-link hover:text-blue-400 transition">About</a>
+    <a href="#projects" class="nav-link hover:text-blue-400 transition">Projects</a>
+    <a href="#contact" class="nav-link hover:text-blue-400 transition">Contact</a>
   </nav>
 
-  <!-- Smooth full-page scroll on wheel -->
+  <!-- Active Link + Full Page Scroll -->
   <script>
     const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
     let currentIndex = 0;
     let scrolling = false;
+
+    function setActiveLink() {
+      navLinks.forEach((link, i) => {
+        link.classList.toggle("text-blue-400", i === currentIndex);
+      });
+    }
 
     window.addEventListener("wheel", (e) => {
       if (scrolling) return;
@@ -96,9 +140,20 @@
       }
 
       sections[currentIndex].scrollIntoView({ behavior: "smooth" });
+      setActiveLink();
 
       setTimeout(() => scrolling = false, 1000);
     });
+
+    // Click navigation update
+    navLinks.forEach((link, i) => {
+      link.addEventListener("click", () => {
+        currentIndex = i;
+        setActiveLink();
+      });
+    });
+
+    setActiveLink();
   </script>
 </body>
 </html>
