@@ -2,30 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom utility classes and animations that complement Tailwind */
-@layer utilities {
-  .glass-card {
-    background: rgba(30, 41, 59, 0.4);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  }
-
-  .glass-nav {
-    background: rgba(15, 23, 42, 0.7);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-  }
-}
-
 /* Scroll Reveal Animation Classes */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+  transform: translateY(20px);
+  transition: all 1s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .reveal.active {
@@ -33,74 +14,35 @@
   transform: translateY(0);
 }
 
-/* Background Blob Animations */
-@keyframes blob {
-  0% {
-    transform: translate(0px, 0px) scale(1);
-  }
-
-  33% {
-    transform: translate(30px, -50px) scale(1.1);
-  }
-
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-
-  100% {
-    transform: translate(0px, 0px) scale(1);
-  }
-}
-
-.animate-blob {
-  animation: blob 7s infinite;
-}
-
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-
-.animation-delay-4000 {
-  animation-delay: 4s;
-}
-
-/* Custom Scrollbar */
+/* Custom Scrollbar - Minimal */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #030712;
-  /* gray-950 */
+  background: #0a0a0a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1f2937;
-  /* gray-800 */
-  border-radius: 4px;
+  background: #222222;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3b82f6;
-  /* primary color */
+  background: #444444;
 }
 
-/* Sidebar Custom Scrollbar (Hide visual, retain scroll) */
-#sidebar::-webkit-scrollbar {
-  width: 4px;
+/* Subtlety for selection */
+::selection {
+  background-color: #ededed;
+  color: #0a0a0a;
 }
 
-#sidebar::-webkit-scrollbar-track {
-  background: transparent;
+/* Nav Active Link */
+.nav-link.active {
+  color: #ededed;
 }
 
-#sidebar::-webkit-scrollbar-thumb {
-  background: #374151;
-  /* gray-700 */
-  border-radius: 2px;
-}
-
-#sidebar:hover::-webkit-scrollbar-thumb {
-  background: #4b5563;
-  /* gray-600 */
+/* Smooth anchoring */
+html {
+  scroll-behavior: smooth;
 }
