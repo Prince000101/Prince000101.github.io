@@ -49,14 +49,15 @@
     <div class="w-full px-6 sm:px-8 lg:px-12 py-5 flex justify-between items-center">
       <!-- Data bound: Nav Brand -->
       <a href="#home" id="nav-brand"
-        class="font-serif italic text-lg tracking-wide hover:text-brand-muted transition-colors"></a>
-      <ul class="hidden sm:flex items-center space-x-6 lg:space-x-10 text-sm font-medium text-brand-muted">
+        class="font-serif italic text-base sm:text-lg tracking-wide hover:text-brand-muted transition-colors"></a>
+
+      <!-- All Links Visible on all devices, but scaled cleanly for mobile -->
+      <ul
+        class="flex items-center space-x-4 sm:space-x-6 lg:space-x-10 text-xs sm:text-sm font-medium text-brand-muted">
         <li><a href="#about" class="nav-link hover:text-brand-text transition-colors">About</a></li>
         <li><a href="#work" class="nav-link hover:text-brand-text transition-colors">Work</a></li>
         <li><a href="#contact" class="nav-link hover:text-brand-text transition-colors">Connect</a></li>
       </ul>
-      <a href="#contact"
-        class="sm:hidden text-xs font-serif italic border border-brand-border px-3 py-1 rounded-full text-brand-muted hover:text-brand-text hover:border-brand-muted transition-colors">Connect</a>
     </div>
   </nav>
 
