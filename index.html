@@ -1,159 +1,309 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prince | Portfolio</title>
+  <title>Prince | Developer & Tech Enthusiast</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    html {
-      scroll-behavior: smooth;
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            primary: '#3b82f6',
+            secondary: '#8b5cf6',
+          }
+        }
+      }
     }
-    section {
-      height: 100vh;
-    }
-    /* Typing animation */
-    .typing::after {
-      content: '|';
-      animation: blink 1s infinite;
-    }
-    @keyframes blink {
-      0%, 50% { opacity: 1; }
-      51%, 100% { opacity: 0; }
-    }
-  </style>
+  </script>
 </head>
-<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white font-sans relative">
 
-  <!-- Home -->
-  <section id="home" class="flex flex-col justify-center items-center text-center px-6">
-    <h1 class="text-5xl md:text-7xl font-extrabold mb-4">
-      Hi, I'm <span class="text-blue-400">Prince</span> 👋
-    </h1>
-    <p class="typing text-lg md:text-2xl text-gray-300 mb-6">
-      Aspiring Computer Science Engineer | BSc Psychology
-    </p>
-    <a href="#projects" 
-       class="mt-4 px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-full text-lg transition shadow-lg hover:shadow-blue-500/40">
-       Explore My Work →
-    </a>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="flex flex-col justify-center px-6 bg-gray-900/60 backdrop-blur-md">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-4xl font-bold mb-6">About Me</h2>
-      <p class="text-lg text-gray-300 leading-relaxed">
-        I’m passionate about <span class="text-blue-400">technology</span>, 
-        <span class="text-blue-400">psychology</span>, and building 
-        <span class="text-blue-400">projects</span> that blend the two.  
-        Currently pursuing <strong>BSc Psychology</strong> while mastering 
-        <strong>Computer Science</strong>.  
-        My goal? To create innovative solutions that help people and inspire change.
-      </p>
+<body
+  class="bg-gray-950 text-gray-100 font-sans antialiased overflow-x-hidden selection:bg-primary selection:text-white">
+  <!-- Interactive Background Element -->
+  <div class="fixed inset-0 z-[-1]">
+    <div
+      class="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob">
     </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="flex flex-col justify-center px-6">
-    <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-4xl font-bold mb-12">Projects</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        
-        <!-- Project Card -->
-        <div class="bg-gray-800/70 backdrop-blur-md rounded-2xl p-6 
-                    shadow-lg hover:shadow-blue-500/40 
-                    transform hover:-translate-y-2 transition-all duration-300">
-          <h3 class="text-2xl font-bold mb-3">Voice Assistant (Python)</h3>
-          <p class="text-gray-300 mb-4">
-            A smart assistant with speech recognition, AI-driven responses, and a modern GUI.
-          </p>
-          <a href="https://github.com/your-username/voice-assistant" 
-             class="text-blue-400 hover:underline">View on GitHub →</a>
-        </div>
-
-        <!-- Project Card -->
-        <div class="bg-gray-800/70 backdrop-blur-md rounded-2xl p-6 
-                    shadow-lg hover:shadow-blue-500/40 
-                    transform hover:-translate-y-2 transition-all duration-300">
-          <h3 class="text-2xl font-bold mb-3">Portfolio Website</h3>
-          <p class="text-gray-300 mb-4">
-            A responsive personal portfolio showcasing my journey, skills, and achievements.
-          </p>
-          <a href="https://github.com/your-username/portfolio" 
-             class="text-blue-400 hover:underline">View on GitHub →</a>
-        </div>
-
-      </div>
+    <div
+      class="absolute top-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000">
     </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="flex flex-col justify-center px-6 bg-gray-900/60 backdrop-blur-md">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-4xl font-bold mb-6">Contact</h2>
-      <p class="text-lg text-gray-300 mb-6">Let’s connect and collaborate!</p>
-      <div class="space-y-3">
-        <p>
-          📧 Email: 
-          <a href="mailto:your-email@example.com" class="text-blue-400 hover:underline">your-email@example.com</a>
-        </p>
-        <p>
-          💻 GitHub: 
-          <a href="https://github.com/your-username" class="text-blue-400 hover:underline">github.com/your-username</a>
-        </p>
-      </div>
+    <div
+      class="absolute bottom-1/4 left-1/2 w-96 h-96 bg-pink-500/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-4000">
     </div>
-  </section>
+  </div>
 
-  <!-- Floating Bottom Navbar -->
-  <nav id="navbar" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 
-              bg-gray-800/80 backdrop-blur-lg shadow-xl border border-gray-700
-              rounded-full px-8 py-3 flex space-x-10 text-sm md:text-base z-50">
-    <a href="#home" class="nav-link hover:text-blue-400 transition">Home</a>
-    <a href="#about" class="nav-link hover:text-blue-400 transition">About</a>
-    <a href="#projects" class="nav-link hover:text-blue-400 transition">Projects</a>
-    <a href="#contact" class="nav-link hover:text-blue-400 transition">Contact</a>
+  <!-- Navbar -->
+  <nav
+    class="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 glass-nav rounded-full px-6 py-4 transition-all duration-300">
+    <ul class="flex items-center space-x-4 md:space-x-8 text-sm md:text-base font-medium">
+      <li><a href="#home" class="nav-link hover:text-primary transition-colors">Home</a></li>
+      <li><a href="#about" class="nav-link hover:text-primary transition-colors">About</a></li>
+      <li><a href="#skills" class="nav-link hover:text-primary transition-colors">Skills</a></li>
+      <li><a href="#projects" class="nav-link hover:text-primary transition-colors">Projects</a></li>
+      <li><a href="#contact" class="nav-link hover:text-primary transition-colors">Contact</a></li>
+    </ul>
   </nav>
 
-  <!-- Active Link + Full Page Scroll -->
-  <script>
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".nav-link");
-    let currentIndex = 0;
-    let scrolling = false;
+  <main class="flex flex-col gap-24 md:gap-32 pb-32">
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20 reveal">
+      <div
+        class="inline-block mb-6 px-4 py-1.5 rounded-full border border-gray-700 bg-gray-800/50 backdrop-blur-sm text-sm font-medium text-gray-300">
+        ✨ Welcome to my universe
+      </div>
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 tracking-tight">
+        Hi, I'm <br class="md:hidden" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Prince</span>
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-400 max-w-2xl font-light mb-10 leading-relaxed mx-auto">
+        Aspiring Computer Science Engineer <span class="text-gray-600">|</span> BCA
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 items-center">
+        <a href="#projects"
+          class="px-8 py-3.5 bg-primary hover:bg-blue-600 text-white font-medium rounded-full transition-all shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:shadow-[0_0_25px_rgba(59,130,246,0.7)] hover:-translate-y-1">
+          Explore My Work
+        </a>
+        <a href="#contact"
+          class="px-8 py-3.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-white font-medium rounded-full transition-all hover:-translate-y-1">
+          Get In Touch
+        </a>
+      </div>
+    </section>
 
-    function setActiveLink() {
-      navLinks.forEach((link, i) => {
-        link.classList.toggle("text-blue-400", i === currentIndex);
-      });
-    }
+    <!-- About Section -->
+    <section id="about" class="px-6 reveal mx-auto max-w-6xl w-full">
+      <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+        <div class="w-full md:w-1/2 relative group">
+          <div
+            class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000">
+          </div>
+          <div
+            class="relative bg-gray-900 rounded-2xl aspect-square md:aspect-[4/5] overflow-hidden border border-gray-800">
+            <!-- Placeholder for image, using a cool abstract pattern for now -->
+            <img
+              src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Technology & Mind"
+              class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700 ease-in-out" />
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2">
+          <h2 class="text-xs font-bold uppercase tracking-widest text-primary mb-2">Who am I</h2>
+          <h3 class="text-4xl md:text-5xl font-display font-bold mb-6">About Me</h3>
+          <p class="text-lg text-gray-400 mb-6 leading-relaxed">
+            I’m passionate about technology, psychology, and creating cool projects. Currently, I’m building my skills
+            in computer science, while also studying human behavior.
+          </p>
+          <p class="text-lg text-gray-400 leading-relaxed mb-8">
+            I love blending both worlds — <span class="text-gray-200 font-medium">tech + mind</span> — to build things
+            that help people, solve real problems, and look beautiful while doing it.
+          </p>
+          <div class="grid grid-cols-2 gap-6">
+            <div class="glass-card p-4 rounded-xl text-center">
+              <span
+                class="block text-3xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-1">BCA</span>
+              <span class="text-sm text-gray-400">Current Study</span>
+            </div>
+            <div class="glass-card p-4 rounded-xl text-center">
+              <span
+                class="block text-3xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-1">10+</span>
+              <span class="text-sm text-gray-400">Projects Built</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    window.addEventListener("wheel", (e) => {
-      if (scrolling) return;
-      scrolling = true;
+    <!-- Skills Section -->
+    <section id="skills" class="px-6 reveal mx-auto max-w-6xl w-full">
+      <div class="text-center mb-16">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-secondary mb-2">My Arsenal</h2>
+        <h3 class="text-4xl md:text-5xl font-display font-bold">Technical Skills</h3>
+      </div>
+      <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+        <!-- Skill Badges -->
+        <div
+          class="glass-card px-6 py-4 rounded-2xl flex items-center gap-3 hover:-translate-y-2 transition-transform duration-300">
+          <svg class="w-8 h-8 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+          </svg>
+          <span class="font-medium text-lg">Python</span>
+        </div>
+        <div
+          class="glass-card px-6 py-4 rounded-2xl flex items-center gap-3 hover:-translate-y-2 transition-transform duration-300">
+          <svg class="w-8 h-8 text-orange-500" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+          </svg>
+          <span class="font-medium text-lg">HTML5</span>
+        </div>
+        <div
+          class="glass-card px-6 py-4 rounded-2xl flex items-center gap-3 hover:-translate-y-2 transition-transform duration-300">
+          <svg class="w-8 h-8 text-blue-400" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+          </svg>
+          <span class="font-medium text-lg">CSS3</span>
+        </div>
+        <div
+          class="glass-card px-6 py-4 rounded-2xl flex items-center gap-3 hover:-translate-y-2 transition-transform duration-300">
+          <svg class="w-8 h-8 text-yellow-400" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+          </svg>
+          <span class="font-medium text-lg">JavaScript</span>
+        </div>
+        <div
+          class="glass-card px-6 py-4 rounded-2xl flex items-center gap-3 hover:-translate-y-2 transition-transform duration-300">
+          <svg class="w-8 h-8 text-teal-400" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+          </svg>
+          <span class="font-medium text-lg">Tailwind CSS</span>
+        </div>
+        <div
+          class="glass-card px-6 py-4 rounded-2xl flex items-center gap-3 hover:-translate-y-2 transition-transform duration-300">
+          <svg class="w-8 h-8 text-purple-400" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+          </svg>
+          <span class="font-medium text-lg">Psychology</span>
+        </div>
+      </div>
+    </section>
 
-      if (e.deltaY > 0 && currentIndex < sections.length - 1) {
-        currentIndex++;
-      } else if (e.deltaY < 0 && currentIndex > 0) {
-        currentIndex--;
-      }
+    <!-- Projects Section -->
+    <section id="projects" class="px-6 reveal mx-auto max-w-6xl w-full">
+      <div class="text-center mb-16">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-primary mb-2">My Work</h2>
+        <h3 class="text-4xl md:text-5xl font-display font-bold">Featured Projects</h3>
+      </div>
 
-      sections[currentIndex].scrollIntoView({ behavior: "smooth" });
-      setActiveLink();
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <!-- Project 1 -->
+        <article
+          class="glass-card rounded-3xl overflow-hidden group hover:border-primary/50 transition-colors duration-500">
+          <div class="relative h-64 overflow-hidden border-b border-gray-800">
+            <img
+              src="https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Voice Assistant"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+            <div class="absolute inset-0 bg-gray-900/20 group-hover:bg-transparent transition-colors duration-500">
+            </div>
+          </div>
+          <div class="p-8">
+            <div class="flex gap-2 mb-4">
+              <span
+                class="px-3 py-1 text-xs font-medium rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">Python</span>
+              <span
+                class="px-3 py-1 text-xs font-medium rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">AI</span>
+            </div>
+            <h4 class="text-2xl font-display font-bold mb-3 group-hover:text-primary transition-colors">Voice Assistant
+            </h4>
+            <p class="text-gray-400 mb-6 line-clamp-2">
+              A smart assistant with speech recognition, AI responses, and GUI features to help automate daily tasks
+              seamlessly.
+            </p>
+            <a href="https://github.com/your-username/voice-assistant"
+              class="inline-flex items-center gap-2 text-white font-medium hover:text-primary transition-colors">
+              View Source
+              <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </article>
 
-      setTimeout(() => scrolling = false, 1000);
-    });
+        <!-- Project 2 -->
+        <article
+          class="glass-card rounded-3xl overflow-hidden group hover:border-secondary/50 transition-colors duration-500">
+          <div class="relative h-64 overflow-hidden border-b border-gray-800">
+            <img
+              src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Portfolio"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+            <div class="absolute inset-0 bg-gray-900/20 group-hover:bg-transparent transition-colors duration-500">
+            </div>
+          </div>
+          <div class="p-8">
+            <div class="flex gap-2 mb-4">
+              <span
+                class="px-3 py-1 text-xs font-medium rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20">HTML/CSS</span>
+              <span
+                class="px-3 py-1 text-xs font-medium rounded-full bg-teal-500/10 text-teal-400 border border-teal-500/20">Tailwind</span>
+            </div>
+            <h4 class="text-2xl font-display font-bold mb-3 group-hover:text-secondary transition-colors">Personal
+              Portfolio</h4>
+            <p class="text-gray-400 mb-6 line-clamp-2">
+              This completely custom, responsive, and animated portfolio website showcasing my skills, achievements, and
+              unique design aesthetic.
+            </p>
+            <a href="https://github.com/your-username/portfolio"
+              class="inline-flex items-center gap-2 text-white font-medium hover:text-secondary transition-colors">
+              View Source
+              <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    // Click navigation update
-    navLinks.forEach((link, i) => {
-      link.addEventListener("click", () => {
-        currentIndex = i;
-        setActiveLink();
-      });
-    });
+    <!-- Contact Section -->
+    <section id="contact" class="px-6 reveal mx-auto max-w-4xl w-full text-center pb-20">
+      <h2 class="text-xs font-bold uppercase tracking-widest text-primary mb-2">What's Next?</h2>
+      <h3 class="text-4xl md:text-5xl font-display font-bold mb-6">Get In Touch</h3>
+      <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
+        I'm currently looking for new opportunities and collaborations. Whether you have a question, a project idea, or
+        just want to say hi, my inbox is always open!
+      </p>
+      <a href="mailto:your-email@example.com"
+        class="inline-flex items-center justify-center px-8 py-4 text-lg font-medium bg-white text-gray-900 rounded-full hover:bg-gray-200 transition-colors shadow-lg hover:shadow-xl">
+        Say Hello
+      </a>
 
-    setActiveLink();
-  </script>
+      <div class="mt-16 flex justify-center gap-6">
+        <a href="https://github.com/your-username"
+          class="p-4 glass-card rounded-full hover:text-primary hover:-translate-y-1 transition-all"
+          aria-label="GitHub">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+              clip-rule="evenodd" />
+          </svg>
+        </a>
+        <a href="#" class="p-4 glass-card rounded-full hover:text-primary hover:-translate-y-1 transition-all"
+          aria-label="LinkedIn">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-gray-800 bg-gray-900/50 py-8 text-center text-gray-400 text-sm">
+    <p>Designed & Built with <span class="text-red-500 animate-pulse inline-block">❤️</span> by Prince</p>
+    <p class="mt-2 text-gray-500">&copy; 2026 Prince. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
