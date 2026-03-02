@@ -6,7 +6,7 @@
 .reveal {
   opacity: 0;
   transform: translateY(20px);
-  transition: all 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: all 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .reveal.active {
@@ -29,6 +29,19 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #444444;
+}
+
+/* Hide scrollbar completely but allow scroll on horizontal tracks */
+.hide-scroll {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.hide-scroll::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari and Opera */
 }
 
 /* Subtlety for selection */

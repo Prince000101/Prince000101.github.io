@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth bg-[#0a0a0a]">
+<html lang="en" class="scroll-smooth bg-[#0a0a0a] overflow-x-hidden">
 
 <head>
   <meta charset="UTF-8" />
@@ -36,7 +36,7 @@
 </head>
 
 <body
-  class="bg-brand-bg text-brand-text font-sans antialiased overflow-x-hidden selection:bg-brand-text selection:text-brand-bg relative min-h-screen flex flex-col justify-between">
+  class="bg-brand-bg text-brand-text font-sans antialiased selection:bg-brand-text selection:text-brand-bg relative w-full h-full">
 
   <!-- Grain Overlay for Texture -->
   <div class="fixed inset-0 z-[-1] opacity-[0.03] pointer-events-none"
@@ -46,7 +46,7 @@
   <!-- Minimal Nav -->
   <nav
     class="fixed top-0 left-0 w-full z-50 bg-brand-bg/80 backdrop-blur-md border-b border-brand-border/50 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-5 flex justify-between items-center">
+    <div class="w-full px-6 sm:px-8 lg:px-12 py-5 flex justify-between items-center">
       <a href="#home"
         class="font-serif italic text-lg tracking-wide hover:text-brand-muted transition-colors">Prince.</a>
       <ul class="hidden sm:flex items-center space-x-6 lg:space-x-10 text-sm font-medium text-brand-muted">
@@ -54,88 +54,91 @@
         <li><a href="#work" class="nav-link hover:text-brand-text transition-colors">Work</a></li>
         <li><a href="#contact" class="nav-link hover:text-brand-text transition-colors">Connect</a></li>
       </ul>
-      <!-- Mobile Menu Icon (optional enhancement later) -->
       <a href="#contact"
         class="sm:hidden text-xs font-serif italic border border-brand-border px-3 py-1 rounded-full text-brand-muted hover:text-brand-text hover:border-brand-muted transition-colors">Connect</a>
     </div>
   </nav>
 
-  <main class="flex-grow flex flex-col gap-32 sm:gap-40 lg:gap-56 pb-32 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full">
-    <!-- Hero Section -->
+  <main class="w-full">
+    <!-- Home Section (Full Viewport Height) -->
     <section id="home"
-      class="min-h-[85vh] lg:min-h-screen flex flex-col justify-center items-start reveal pt-24 lg:pt-32">
-      <p class="text-brand-muted text-xs sm:text-sm lg:text-base uppercase tracking-[0.2em] mb-4 lg:mb-6 font-medium">
-        Portfolio</p>
+      class="h-[100svh] w-full flex flex-col justify-center items-center text-center px-6 sm:px-12 pt-16 reveal relative w-full">
+      <p class="text-brand-muted text-[10px] sm:text-xs uppercase tracking-[0.2em] mb-4 xl:mb-6 font-medium">Portfolio
+      </p>
+
+      <!-- Scaled perfectly to fit any screen without clipping -->
       <h1
-        class="text-5xl sm:text-7xl lg:text-8xl xl:text-9xl font-serif font-medium leading-[1.1] mb-6 sm:mb-8 text-brand-text max-w-full">
+        class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-serif font-medium leading-[1.1] mb-6 md:mb-8 text-brand-text max-w-full">
         Building digital <br class="hidden sm:block" />
-        <span class="text-brand-muted italic sm:inline block mt-2 sm:mt-0">experiences</span> <br
+        <span class="text-brand-muted italic sm:inline block mt-1 sm:mt-0">experiences</span> <br
           class="hidden sm:block" />
         with purpose.
       </h1>
+
       <p
-        class="text-base sm:text-lg lg:text-2xl xl:text-3xl text-brand-muted max-w-2xl lg:max-w-3xl xl:max-w-4xl font-light leading-relaxed mb-10 sm:mb-12">
+        class="text-sm md:text-lg lg:text-xl text-brand-muted max-w-lg lg:max-w-2xl font-light leading-relaxed mb-10 xl:mb-12">
         I'm Prince. An aspiring Computer Science Engineer blending technology and psychology to create meaningful
         software.
       </p>
-      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10">
-        <a href="#work"
-          class="group flex items-center gap-3 text-sm lg:text-base font-medium uppercase tracking-widest hover:text-brand-muted transition-colors">
-          View Work
-          <span
-            class="block w-8 lg:w-16 h-[1px] bg-brand-text group-hover:bg-brand-muted transition-colors group-hover:w-12 lg:group-hover:w-20 duration-300"></span>
-        </a>
+
+      <div
+        class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+        <span class="text-[10px] text-brand-muted uppercase tracking-widest">Scroll</span>
+        <div class="w-[1px] h-8 bg-brand-border"></div>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="reveal scroll-mt-24 lg:scroll-mt-40">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-20 items-start">
-        <div class="md:col-span-4 lg:col-span-5 w-full">
+    <!-- About Section (Full Viewport Height) -->
+    <section id="about"
+      class="h-[100svh] w-full flex flex-col justify-center items-center px-6 sm:px-12 reveal scroll-mt-0 relative border-t border-brand-border/20">
+      <!-- Added w-full max-w-7xl constraint to keep layout uniform centrally -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center w-full max-w-7xl h-full py-24">
+        <div class="lg:col-span-5 h-[40vh] lg:h-[70vh] w-full flex items-center">
           <div
-            class="aspect-square md:aspect-[4/5] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 ease-out border border-brand-border w-full">
+            class="h-full w-full aspect-square md:aspect-auto overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 ease-out border border-brand-border relative">
             <img
               src="https://images.unsplash.com/photo-1544256718-3b61023b4cb6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-              alt="Thoughts" class="w-full h-full object-cover" />
+              alt="Thoughts" class="absolute inset-0 w-full h-full object-cover" />
           </div>
         </div>
-        <div class="md:col-span-8 lg:col-span-7 flex flex-col justify-center h-full">
-          <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-serif mb-6 md:mb-10 leading-tight">
+
+        <div class="lg:col-span-7 flex flex-col justify-center h-full">
+          <h2 class="text-2xl sm:text-4xl lg:text-6xl xl:text-7xl font-serif mb-4 md:mb-8 leading-tight">
             Technology mapped <br class="hidden md:block" /><span class="text-brand-muted italic">to the human
               mind.</span>
           </h2>
           <div
-            class="space-y-4 lg:space-y-6 text-brand-muted font-light leading-relaxed text-base sm:text-lg lg:text-xl xl:text-2xl lg:max-w-3xl">
+            class="space-y-3 lg:space-y-6 text-brand-muted font-light leading-relaxed text-sm md:text-base lg:text-lg lg:max-w-2xl">
             <p>
               I am passionate about the intersection of human behavior and technology. Currently pursuing a BCA
               alongside studies in psychology, I strive to build intuitive, beautiful software.
             </p>
-            <p>
+            <p class="hidden sm:block">
               Whether it's scripting in Python, structuring data, or painting interfaces with CSS, my goal is always
               simplicity. Elegance found in the details.
             </p>
           </div>
 
           <div
-            class="mt-10 lg:mt-16 grid grid-cols-2 md:grid-cols-3 gap-y-8 gap-x-4 border-t border-brand-border pt-8 lg:pt-12">
+            class="mt-6 lg:mt-12 grid grid-cols-3 gap-y-4 lg:gap-y-8 gap-x-4 border-t border-brand-border pt-6 lg:pt-8 w-full">
             <div>
-              <span class="block text-brand-text font-medium text-sm lg:text-base mb-3">Core</span>
-              <ul class="text-brand-muted text-sm lg:text-base space-y-2">
+              <span class="block text-brand-text font-medium text-xs lg:text-sm mb-2">Core</span>
+              <ul class="text-brand-muted text-xs lg:text-sm space-y-1 lg:space-y-2">
                 <li>Python</li>
                 <li>JavaScript</li>
                 <li>HTML & CSS</li>
               </ul>
             </div>
             <div>
-              <span class="block text-brand-text font-medium text-sm lg:text-base mb-3">Frameworks</span>
-              <ul class="text-brand-muted text-sm lg:text-base space-y-2">
+              <span class="block text-brand-text font-medium text-xs lg:text-sm mb-2">Frameworks</span>
+              <ul class="text-brand-muted text-xs lg:text-sm space-y-1 lg:space-y-2">
                 <li>Tailwind CSS</li>
                 <li>React (Learning)</li>
               </ul>
             </div>
             <div>
-              <span class="block text-brand-text font-medium text-sm lg:text-base mb-3">Design</span>
-              <ul class="text-brand-muted text-sm lg:text-base space-y-2">
+              <span class="block text-brand-text font-medium text-xs lg:text-sm mb-2">Design</span>
+              <ul class="text-brand-muted text-xs lg:text-sm space-y-1 lg:space-y-2">
                 <li>Minimalism</li>
                 <li>Psychology UX</li>
               </ul>
@@ -145,42 +148,47 @@
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="work" class="reveal scroll-mt-24 lg:scroll-mt-40">
-      <div class="flex flex-col xl:flex-row xl:items-end justify-between mb-12 sm:mb-16 lg:mb-24 gap-4 sm:gap-6">
-        <h2 class="text-4xl sm:text-6xl lg:text-8xl xl:text-9xl font-serif">Selected <br
-            class="hidden sm:block xl:hidden" /><span class="text-brand-muted italic">Works</span></h2>
-        <p class="text-brand-muted max-w-sm lg:max-w-md text-sm lg:text-base xl:text-lg leading-relaxed mt-4 xl:mt-0">A
-          collection of projects showcasing my journey in development and design.</p>
+    <!-- Projects Section (Full Viewport Height with Horizontal Scroll) -->
+    <section id="work"
+      class="h-[100svh] w-full flex flex-col justify-center reveal scroll-mt-0 relative border-t border-brand-border/20 overflow-hidden">
+      <!-- Section Header -->
+      <div
+        class="w-full max-w-7xl mx-auto px-6 sm:px-12 flex flex-col md:flex-row md:items-end justify-between mb-8 mt-16 md:mt-24">
+        <h2 class="text-4xl sm:text-5xl lg:text-7xl font-serif">Selected <br class="hidden sm:block md:hidden" /><span
+            class="text-brand-muted italic">Works</span></h2>
+        <p
+          class="text-brand-muted text-xs sm:text-sm md:max-w-[200px] lg:max-w-sm leading-relaxed mt-2 md:mt-0 text-right md:-mb-2">
+          Drag or scroll horizontally to explore 5 distinct projects.</p>
       </div>
 
-      <div class="space-y-20 sm:space-y-32 lg:space-y-48">
+      <!-- Horizontal Scroll Track -->
+      <div
+        class="hide-scroll overflow-x-auto w-full flex snap-x snap-mandatory flex-grow items-center pb-12 sm:pb-24 pt-4 px-6 sm:px-12 gap-6 sm:gap-12"
+        style="scrollbar-width: none;">
+
         <!-- Project 1 -->
-        <article class="group">
-          <a href="https://github.com/your-username/voice-assistant" class="block">
-            <div class="overflow-hidden border border-brand-border mb-6 lg:mb-10 w-full">
-              <!-- Using aspect ratio for responsive heights -->
-              <div class="w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] relative">
-                <img
-                  src="https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-                  alt="Voice Assistant"
-                  class="absolute inset-0 w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-1000 ease-out" />
-              </div>
-            </div>
-            <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 lg:gap-8">
-              <div class="max-w-3xl">
+        <article
+          class="group relative flex-shrink-0 w-[85vw] max-w-4xl h-[50vh] sm:h-[60vh] snap-center snap-always border border-brand-border overflow-hidden">
+          <a href="https://github.com/your-username/voice-assistant" class="block w-full h-full">
+            <img
+              src="https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+              alt="Voice Assistant"
+              class="absolute inset-0 w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-1000 ease-out" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent"></div>
+
+            <div
+              class="absolute bottom-0 left-0 w-full p-6 sm:p-10 flex flex-col md:flex-row justify-between md:items-end gap-4">
+              <div>
                 <h3
-                  class="text-2xl sm:text-3xl lg:text-5xl font-serif group-hover:text-brand-muted transition-colors mb-2 lg:mb-4">
+                  class="text-2xl sm:text-4xl font-serif text-brand-text mb-2 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                   Voice Assistant</h3>
                 <p
-                  class="text-brand-muted text-sm sm:text-base lg:text-xl line-clamp-2 md:line-clamp-none font-light leading-relaxed">
-                  A smart Python application blending speech recognition and AI to automate daily tasks seamlessly
-                  through a custom interface.</p>
+                  class="text-brand-muted text-sm max-w-md line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                  A smart Python application blending speech recognition and AI to automate daily tasks seamlessly.</p>
               </div>
-              <ul
-                class="flex md:flex-col lg:flex-row justify-start gap-4 text-xs lg:text-sm tracking-widest uppercase text-brand-accent whitespace-nowrap md:text-right lg:text-left mt-2 md:mt-0">
+              <ul class="flex gap-4 text-xs tracking-widest uppercase text-brand-text/50 whitespace-nowrap">
                 <li>Python</li>
-                <li class="hidden lg:block">•</li>
+                <li class="hidden sm:block">•</li>
                 <li>AI</li>
               </ul>
             </div>
@@ -188,80 +196,244 @@
         </article>
 
         <!-- Project 2 -->
-        <article class="group">
-          <a href="https://github.com/your-username/portfolio" class="block">
-            <div class="overflow-hidden border border-brand-border mb-6 lg:mb-10 w-full">
-              <div class="w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] relative">
-                <img
-                  src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-                  alt="Portfolio"
-                  class="absolute inset-0 w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-1000 ease-out" />
-              </div>
-            </div>
-            <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 lg:gap-8">
-              <div class="max-w-3xl">
+        <article
+          class="group relative flex-shrink-0 w-[85vw] max-w-4xl h-[50vh] sm:h-[60vh] snap-center snap-always border border-brand-border overflow-hidden">
+          <a href="https://github.com/your-username/portfolio" class="block w-full h-full">
+            <img
+              src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+              alt="Portfolio"
+              class="absolute inset-0 w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-1000 ease-out" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent"></div>
+
+            <div
+              class="absolute bottom-0 left-0 w-full p-6 sm:p-10 flex flex-col md:flex-row justify-between md:items-end gap-4">
+              <div>
                 <h3
-                  class="text-2xl sm:text-3xl lg:text-5xl font-serif group-hover:text-brand-muted transition-colors mb-2 lg:mb-4">
+                  class="text-2xl sm:text-4xl font-serif text-brand-text mb-2 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                   Minimal Portfolio</h3>
                 <p
-                  class="text-brand-muted text-sm sm:text-base lg:text-xl line-clamp-2 md:line-clamp-none font-light leading-relaxed">
-                  A deeply personal, soulful web portfolio designed from scratch with Tailwind CSS focusing on
-                  typography and whitespace, built to scale across devices.</p>
+                  class="text-brand-muted text-sm max-w-md line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                  A deeply personal, soulful web portfolio designed from scratch with Tailwind CSS.</p>
               </div>
-              <ul
-                class="flex md:flex-col lg:flex-row justify-start gap-4 text-xs lg:text-sm tracking-widest uppercase text-brand-accent whitespace-nowrap md:text-right lg:text-left mt-2 md:mt-0">
-                <li>HTML/CSS</li>
-                <li class="hidden lg:block">•</li>
-                <li>Tailwind</li>
+              <ul class="flex gap-4 text-xs tracking-widest uppercase text-brand-text/50 whitespace-nowrap">
+                <li>CSS</li>
+                <li class="hidden sm:block">•</li>
+                <li>HTML</li>
               </ul>
             </div>
           </a>
         </article>
+
+        <!-- Project 3 -->
+        <article
+          class="group relative flex-shrink-0 w-[85vw] max-w-4xl h-[50vh] sm:h-[60vh] snap-center snap-always border border-brand-border overflow-hidden">
+          <a href="#" class="block w-full h-full">
+            <!-- Using an abstract tech image from unsplash -->
+            <img
+              src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+              alt="Project 3"
+              class="absolute inset-0 w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-1000 ease-out" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent"></div>
+
+            <div
+              class="absolute bottom-0 left-0 w-full p-6 sm:p-10 flex flex-col md:flex-row justify-between md:items-end gap-4">
+              <div>
+                <h3
+                  class="text-2xl sm:text-4xl font-serif text-brand-text mb-2 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                  Analytics API</h3>
+                <p
+                  class="text-brand-muted text-sm max-w-md line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                  A scalable REST API designed to cleanly process heavy datasets efficiently in real-time.</p>
+              </div>
+              <ul class="flex gap-4 text-xs tracking-widest uppercase text-brand-text/50 whitespace-nowrap">
+                <li>Python</li>
+                <li class="hidden sm:block">•</li>
+                <li>Django</li>
+              </ul>
+            </div>
+          </a>
+        </article>
+
+        <!-- Project 4 -->
+        <article
+          class="group relative flex-shrink-0 w-[85vw] max-w-4xl h-[50vh] sm:h-[60vh] snap-center snap-always border border-brand-border overflow-hidden">
+          <a href="#" class="block w-full h-full">
+            <!-- Using an abstract nature/focus image -->
+            <img
+              src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+              alt="Project 4"
+              class="absolute inset-0 w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-1000 ease-out" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent"></div>
+
+            <div
+              class="absolute bottom-0 left-0 w-full p-6 sm:p-10 flex flex-col md:flex-row justify-between md:items-end gap-4">
+              <div>
+                <h3
+                  class="text-2xl sm:text-4xl font-serif text-brand-text mb-2 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                  Mindful Habits</h3>
+                <p
+                  class="text-brand-muted text-sm max-w-md line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                  An application grounded in cognitive psychology that helps users track, build, and maintain routines.
+                </p>
+              </div>
+              <ul class="flex gap-4 text-xs tracking-widest uppercase text-brand-text/50 whitespace-nowrap">
+                <li>React Component</li>
+                <li class="hidden sm:block">•</li>
+                <li>UX</li>
+              </ul>
+            </div>
+          </a>
+        </article>
+
+        <!-- Project 5 -->
+        <article
+          class="group relative flex-shrink-0 w-[85vw] max-w-4xl h-[50vh] sm:h-[60vh] snap-center snap-always border border-brand-border overflow-hidden pr-6">
+          <a href="#" class="block w-full h-full">
+            <!-- Using an image showing code/design -->
+            <img
+              src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+              alt="Project 5"
+              class="absolute inset-0 w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-1000 ease-out" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent"></div>
+
+            <div
+              class="absolute bottom-0 left-0 w-full p-6 sm:p-10 flex flex-col md:flex-row justify-between md:items-end gap-4">
+              <div>
+                <h3
+                  class="text-2xl sm:text-4xl font-serif text-brand-text mb-2 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                  Data Visualizer</h3>
+                <p
+                  class="text-brand-muted text-sm max-w-md line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                  Dynamic dashboards connecting disparate datasets through seamless chart rendering algorithms.</p>
+              </div>
+              <ul class="flex gap-4 text-xs tracking-widest uppercase text-brand-text/50 whitespace-nowrap">
+                <li>JavaScript</li>
+                <li class="hidden sm:block">•</li>
+                <li>D3.js</li>
+              </ul>
+            </div>
+          </a>
+        </article>
+
+        <!-- Dummy element to provide padding at the absolute end of the horizontal track -->
+        <div class="flex-shrink-0 w-12 sm:w-24"></div>
       </div>
     </section>
 
-    <!-- Connect Section -->
+    <!-- Connect Section (Full Viewport Height) -->
+    <!-- Notice scroll-mt-0 perfectly aligns section with top of navbar -->
     <section id="contact"
-      class="reveal scroll-mt-24 lg:scroll-mt-40 border-t border-brand-border pt-16 sm:pt-24 lg:pt-32 pb-4 sm:pb-12">
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-10 lg:gap-16">
-        <div class="w-full md:w-2/3">
-          <h2 class="text-4xl sm:text-6xl lg:text-8xl xl:text-9xl font-serif mb-6 lg:mb-10 w-full">Let's <span
-              class="text-brand-muted italic">talk.</span></h2>
-          <p
-            class="text-brand-muted text-base sm:text-lg lg:text-xl xl:text-2xl max-w-2xl mb-8 lg:mb-12 leading-relaxed font-light">
-            I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.
-          </p>
+      class="h-[100svh] w-full flex flex-col justify-center items-center px-6 sm:px-12 reveal scroll-mt-0 border-t border-brand-border/20 relative">
+      <div class="w-full max-w-7xl flex flex-col justify-center h-full">
+        <h2 class="text-5xl sm:text-7xl lg:text-9xl font-serif mb-4 lg:mb-8 w-full text-center">Let's <span
+            class="text-brand-muted italic">talk.</span></h2>
+
+        <p
+          class="text-brand-muted text-sm sm:text-base lg:text-xl text-center max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed font-light">
+          Whether you have a question, a project idea, or just want to say hi, my inbox is always open!
+        </p>
+
+        <div class="flex justify-center w-full mb-16">
           <a href="mailto:your-email@example.com"
-            class="text-lg sm:text-xl lg:text-3xl xl:text-4xl border-b border-brand-text pb-1 sm:pb-2 hover:text-brand-muted hover:border-brand-muted transition-colors inline-block overflow-hidden text-ellipsis max-w-full">
+            class="text-2xl sm:text-4xl lg:text-5xl border-b border-brand-text hover:text-brand-muted hover:border-brand-muted transition-colors inline-block pb-1">
             hello@example.com
           </a>
         </div>
 
+        <!-- Social footer fixed to the bottom of the bounding container -->
         <ul
-          class="flex md:flex-col gap-6 md:gap-4 lg:gap-6 text-xs sm:text-sm lg:text-base font-medium uppercase tracking-widest text-brand-muted w-full md:w-auto overflow-x-auto pb-4 md:pb-0">
+          class="flex justify-center gap-8 lg:gap-16 text-xs sm:text-sm font-medium uppercase tracking-widest text-brand-muted pt-8 mt-auto mx-auto w-full max-w-md border-t border-brand-border">
           <li><a href="https://github.com/your-username"
-              class="hover:text-brand-text transition-colors flex items-center gap-2 whitespace-nowrap">GitHub <span
-                class="text-brand-border hidden md:inline">↗</span></a></li>
-          <li><a href="#"
-              class="hover:text-brand-text transition-colors flex items-center gap-2 whitespace-nowrap">LinkedIn <span
-                class="text-brand-border hidden md:inline">↗</span></a></li>
-          <li><a href="#"
-              class="hover:text-brand-text transition-colors flex items-center gap-2 whitespace-nowrap">Twitter <span
-                class="text-brand-border hidden md:inline">↗</span></a></li>
+              class="hover:text-brand-text transition-colors flex items-center gap-2">GitHub <span
+                class="text-brand-border hidden sm:inline">↗</span></a></li>
+          <li><a href="#" class="hover:text-brand-text transition-colors flex items-center gap-2">LinkedIn <span
+                class="text-brand-border hidden sm:inline">↗</span></a></li>
+          <li><a href="#" class="hover:text-brand-text transition-colors flex items-center gap-2">Twitter <span
+                class="text-brand-border hidden sm:inline">↗</span></a></li>
         </ul>
       </div>
+
+      <footer
+        class="absolute bottom-6 left-0 w-full text-center text-[10px] sm:text-xs text-brand-muted opacity-50 font-serif italic">
+        <p>Crafted with care. &copy; 2026 Prince.</p>
+      </footer>
     </section>
+
   </main>
 
-  <footer class="w-full border-t border-brand-border/50 py-6 sm:py-8 lg:py-10 mt-12 bg-brand-bg">
-    <div
-      class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm lg:text-base text-brand-muted">
-      <p>&copy; 2026 Prince. All rights reserved.</p>
-      <p class="mt-2 md:mt-0 italic font-serif opacity-70">Crafted with care.</p>
-    </div>
-  </footer>
+  <!-- Horizontal Scroll Helper Script -->
+  <script>
+    // Keep standard vertical reveal functionality
+    document.addEventListener("DOMContentLoaded", () => {
+      const revealElements = document.querySelectorAll(".reveal");
 
-  <script src="script.js"></script>
+      const revealCallback = (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            // Not unobserving to allow fade-out effect on scroll if you want
+          }
+        });
+      };
+
+      const revealOptions = {
+        threshold: 0.15,
+        rootMargin: "0px"
+      };
+
+      const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
+
+      revealElements.forEach((el) => {
+        revealObserver.observe(el);
+      });
+
+      // Simple Horizontal scroll grabbing
+      const scrollTrack = document.querySelector('.hide-scroll');
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      if (scrollTrack) {
+        scrollTrack.addEventListener('mousedown', (e) => {
+          isDown = true;
+          scrollTrack.classList.add('cursor-grabbing');
+          startX = e.pageX - scrollTrack.offsetLeft;
+          scrollLeft = scrollTrack.scrollLeft;
+        });
+
+        scrollTrack.addEventListener('mouseleave', () => {
+          isDown = false;
+          scrollTrack.classList.remove('cursor-grabbing');
+        });
+
+        scrollTrack.addEventListener('mouseup', () => {
+          isDown = false;
+          scrollTrack.classList.remove('cursor-grabbing');
+        });
+
+        scrollTrack.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - scrollTrack.offsetLeft;
+          const walk = (x - startX) * 2; // Scroll-fast
+          scrollTrack.scrollLeft = scrollLeft - walk;
+        });
+
+        // Add wheel mapping to allow vertical mouse wheel to track horizontally IF user hovers over track
+        scrollTrack.addEventListener('wheel', (e) => {
+          if (e.deltaY !== 0) {
+            // Convert vertical scroll to horizontal scroll
+            e.preventDefault(); // Stop page from scrolling down
+            scrollTrack.scrollBy({
+              left: e.deltaY * 2,
+              behavior: 'smooth'
+            })
+          }
+        });
+      }
+    });
+
+  </script>
 </body>
 
 </html>
