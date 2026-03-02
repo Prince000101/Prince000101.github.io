@@ -15,13 +15,13 @@ const portfolioData = {
         aboutHeadline2: "to the human mind.",
         aboutParagraph1: "I am passionate about the intersection of human behavior and technology. Currently pursuing a BCA alongside studies in psychology, I strive to build intuitive, beautiful software.",
         aboutParagraph2: "Whether it's scripting in Python, structuring data, or painting interfaces with CSS, my goal is always simplicity. Elegance found in the details.",
-        email: "your-email@example.com",
+        email: "kumar.prince7428@gmail.com",
         footerText: "Crafted with care. © 2026 Prince."
     },
     socials: [
         { name: "GitHub", url: "https://github.com/Prince000101" },
-        { name: "LinkedIn", url: "#" }, // Replace with your LinkedIn
-        { name: "Instagram", url: "#" }, // Replace with your Instagram
+        { name: "LinkedIn", url: "https://www.linkedin.com/in/dudeprincekumar/" }, // Replace with your LinkedIn
+        { name: "Instagram", url: "https://www.instagram.com/justchill_prince/" }, // Replace with your Instagram
         { name: "Twitter", url: "#" }   // Replace with your Twitter
     ],
     skills: {
