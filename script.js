@@ -31,39 +31,39 @@ const portfolioData = {
     },
     projects: [
         {
-            title: "linux-script",
-            description: "My linux script that I use while using linux mint for some faster work.",
+            title: "Downtube GUI",
+            description: "A Python desktop application built for Linux utilizing yt-dlp to cleanly and efficiently download YouTube media.",
             image: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-            github: "https://github.com/Prince000101/linux-script",
-            tags: ["Shell", "Linux", "Automation"]
+            github: "https://github.com/Prince000101/Downtube__-ytdlp_gui-__application",
+            tags: ["Python", "Linux", "GUI App"]
         },
         {
-            title: "Cpp_games",
-            description: "Bunch of games made with c++ for cli or terminal for fun and practice.",
+            title: "Face Recognition",
+            description: "An exploratory machine learning project implementing real-time facial recognition utilizing Python and OpenCV architectures.",
             image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-            github: "https://github.com/Prince000101/Cpp_games",
-            tags: ["C++", "CLI", "Games"]
+            github: "https://github.com/Prince000101/face_recognition-open-cv-",
+            tags: ["Python", "OpenCV", "Machine Learning"]
         },
         {
-            title: "Ai-i_learning",
-            description: "A repository focused on AI learning, experiments, and machine learning structures.",
-            image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-            github: "https://github.com/Prince000101/Ai-i_learning",
-            tags: ["HTML", "AI", "Learning"]
+            title: "Measure Fitness",
+            description: "A robust modern fitness application conceptualized with TypeScript to provide precise measurement tooling.",
+            image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+            github: "https://github.com/Prince000101/Mesure_Fittness_app",
+            tags: ["TypeScript", "App", "Frontend"]
         },
         {
-            title: "Minimal Portfolio",
-            description: "A deeply personal, soulful web portfolio designed from scratch with Tailwind CSS.",
-            image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-            github: "https://github.com/Prince000101/Prince000101.github.io",
-            tags: ["CSS", "HTML", "Tailwind"]
+            title: "DearDiary",
+            description: "A robust backend system leveraging Java, SpringBoot, and Hibernate ORM for secure data journaling architectures.",
+            image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+            github: "https://github.com/Prince000101/DearDiary-JAVA_springboot_hybernet",
+            tags: ["Java", "SpringBoot", "Backend"]
         },
         {
-            title: "Profile Config",
-            description: "Config files for my GitHub profile README and statistics.",
-            image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-            github: "https://github.com/Prince000101/Prince000101",
-            tags: ["Config", "GitHub"]
+            title: "Cashier System",
+            description: "A complete supermarket point-of-sale software solution built entirely from scratch using Java Swing.",
+            image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+            github: "https://github.com/Prince000101/Cashier-software",
+            tags: ["Java", "Swing", "Desktop Software"]
         }
     ]
 };
