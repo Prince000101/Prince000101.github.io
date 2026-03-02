@@ -22,54 +22,84 @@ document.addEventListener("DOMContentLoaded", () => {
         revealObserver.observe(el);
     });
 
-    // Active Navigation Link Highlighting
+    // Active Navigation Link Highlighting for Sidebar
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".nav-link");
 
-    const highlightNav = () => {
-        let current = "";
-        const scrollY = window.scrollY;
+    if (sections.length > 0) {
+        const highlightNav = () => {
+            let current = "";
+            const scrollY = window.scrollY;
 
-        sections.forEach((section) => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
 
-            // Checking if the scroll position is within the current section
-            if (scrollY >= sectionTop - 200) {
-                current = section.getAttribute("id");
+                // Checking if the scroll position is within the current section
+                if (scrollY >= sectionTop - 250) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach((link) => {
+                link.classList.remove("active");
+                link.parentElement.classList.remove("border-l-2", "border-primary", "bg-white/5");
+
+                if (current && link.getAttribute("href") && link.getAttribute("href").includes(current)) {
+                    link.classList.add("active");
+                    // Add a left border and slight background highlight to the active item
+                    link.parentElement.classList.add("border-l-2", "border-primary", "bg-white/5");
+                }
+            });
+        };
+
+        window.addEventListener("scroll", highlightNav);
+
+        // Trigger once on load to set initial state
+        highlightNav();
+    }
+
+    // Mobile Menu Toggle Logic
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const sidebar = document.getElementById("sidebar");
+    const menuIcon = document.getElementById("menu-icon");
+
+    if (mobileMenuBtn && sidebar) {
+        let isMenuOpen = false;
+
+        mobileMenuBtn.addEventListener("click", () => {
+            isMenuOpen = !isMenuOpen;
+
+            if (isMenuOpen) {
+                // Open menu
+                sidebar.classList.remove("-translate-x-full");
+                sidebar.classList.add("translate-x-0");
+
+                // Change icon to X
+                menuIcon.setAttribute("d", "M6 18L18 6M6 6l12 12");
+
+                // Prevent body scroll
+                document.body.style.overflow = "hidden";
+            } else {
+                // Close menu
+                sidebar.classList.add("-translate-x-full");
+                sidebar.classList.remove("translate-x-0");
+
+                // Change icon back to hamburger
+                menuIcon.setAttribute("d", "M4 6h16M4 12h16m-7 6h7");
+
+                // Restore body scroll
+                document.body.style.overflow = "auto";
             }
         });
 
-        navLinks.forEach((link) => {
-            link.classList.remove("active");
-            if (link.getAttribute("href").includes(current)) {
-                link.classList.add("active");
-            }
+        // Close menu when a link is clicked on mobile
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                if (window.innerWidth < 768) { // 768px is md breakpoint in tailwind
+                    mobileMenuBtn.click();
+                }
+            });
         });
-    };
-
-    window.addEventListener("scroll", highlightNav);
-
-    // Trigger once on load to set initial state
-    highlightNav();
-
-    // Navbar scroll effect (compress based on scroll)
-    const navbar = document.querySelector("nav");
-    let lastScroll = 0;
-
-    window.addEventListener("scroll", () => {
-        const currentScroll = window.scrollY;
-
-        if (currentScroll > 50) {
-            navbar.classList.add("py-2");
-            navbar.classList.remove("py-4");
-            navbar.classList.add("bg-gray-900/80");
-        } else {
-            navbar.classList.add("py-4");
-            navbar.classList.remove("py-2");
-            navbar.classList.remove("bg-gray-900/80");
-        }
-
-        lastScroll = currentScroll;
-    });
+    }
 });
