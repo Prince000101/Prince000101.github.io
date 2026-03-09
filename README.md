@@ -1,7 +1,7 @@
 # Technology Mapped to the Human Mind
 
 <div align="center">
-  <img src="image.jpg" width="100%" alt="Prince's Portfolio Banner" />
+  <img src="image.jpg" width="30%" alt="Prince's Portfolio Banner" />
 </div>
 
 <p align="center">
