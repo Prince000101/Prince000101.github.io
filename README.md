@@ -44,7 +44,6 @@ Building digital experiences with purpose. My work explores the intersection of 
 ## ✦ Deployment
 This portfolio is hosted via **GitHub Pages** and mapped to a custom subdomain using `is-a.dev`.
 
-- **Primary Domain**: [kumarprince.is-a.dev](http://kumarprince.is-a.dev)
 - **Local Mirror**: [prince000101.github.io](https://prince000101.github.io/)
 
 ---
