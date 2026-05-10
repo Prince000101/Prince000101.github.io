@@ -13,3 +13,20 @@ worker:
   volumes:
     - worker_data:/var/lib/data
   restart: unless-stopped
+
+
+route:
+  image: python:${{TAG}}
+  build:
+    context: .
+    dockerfile: Dockerfile.route
+    args:
+      NODE_ENV: production
+  ports:
+    - "4000:4000"
+  environment:
+    - LOG_LEVEL=DEBUG
+    - CACHE_TTL=3600
+  volumes:
+    - route_data:/var/lib/data
+  restart: unless-stopped
