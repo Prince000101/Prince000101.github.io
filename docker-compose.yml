@@ -30,3 +30,20 @@ route:
   volumes:
     - route_data:/var/lib/data
   restart: unless-stopped
+
+
+config:
+  image: nginx:${{TAG}}
+  build:
+    context: .
+    dockerfile: Dockerfile.config
+    args:
+      NODE_ENV: production
+  ports:
+    - "3000:3000"
+  environment:
+    - LOG_LEVEL=DEBUG
+    - CACHE_TTL=60
+  volumes:
+    - config_data:/var/lib/data
+  restart: unless-stopped
